@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import './Cohort.css';
-import StudentLineup from '../student-list/StudentLineup';
-import GroupList from '../group-list/GroupList';
+import './_cohort.sass';
+import StudentLineup from './StudentLineup/StudentLineup';
+import GroupList from './GroupList/GroupList';
 
 class Cohort extends Component {
   constructor(){

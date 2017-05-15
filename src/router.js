@@ -4,36 +4,34 @@ import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-d
 
 // Components
 import AuthService from './utils/AuthService';
-import App from './app/App';
-import Cohort from './cohort/Cohort';
-import Login from './login/Login';
-import Main from './main/Main';
-import Johari from './johari/Johari';
-import NoMatch from './no-match/NoMatch';
-import MyWindow from './my-window/MyWindow';
-import Admin from './admin/Admin';
-import User from './user/User';
+import App from './App/App';
+import Cohort from './Cohort/Cohort';
+import Login from './Login/Login';
+import Main from './Main/Main';
+import Johari from './Johari/Johari';
+import NoMatch from './NoMatch/NoMatch';
+import MyWindow from './MyWindow/MyWindow';
+import Admin from './Admin/Admin';
+import User from './User/User';
 import Axios from 'axios';
 
 // Styles
-import './shared.css';
+import './app.css';
 
 const auth = new AuthService('jH67SpOvPqTg0Jal6m49SCGdECSsFI4L', 'joahriwindow.auth0.com');
+
+const redirect = props => (
+  <Redirect 
+    to={{ pathname: '/login', state: { from: props.location } }}
+  />
+);
+
+const component = (Component, user, rest) => (<Component user={user} {...rest}/>)
 
 const PrivateRoute = ({ component: Component, user, ...rest }) => (
   <Route
     {...rest}
-    render={props => (
-      auth.loggedIn()
-        ? (<Component user={user} {...rest}/>)
-        : (<Redirect
-              to={{
-                pathname: '/login',
-                state: { from: props.location }
-              }}
-            />
-          )
-    )}
+    render={ props => (auth.loggedIn() ? component(Component, user, {...rest}) : redirect(props)) }
   />
 );
 

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import Sidebar from '../sidebar/Sidebar';
-import "./App.css"
+import Sidebar from './Sidebar/Sidebar';
+import "./_app.sass";
 
 class App extends Component {
 

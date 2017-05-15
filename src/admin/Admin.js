@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import './Admin.css';
+import './_admin.sass';
 
 class Admin extends Component {
   constructor(){

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import './Johari.css';
-import AdjectiveList from '../adjective-list/AdjectiveList'
-import JohariSubmit from '../johari-submit/JohariSubmit'
+import './_johari.sass';
+import AdjectiveList from './AdjectiveList/AdjectiveList';
+import JohariSubmit from './JohariSubmit/JohariSubmit';
 import { Link } from 'react-router-dom';
 
 class Johari extends Component {

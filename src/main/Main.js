@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import './Main.css';
-import Header from '../header/Header';
-import AssigneeList from '../assignee-list/AssigneeList';
+import './_main.sass';
+import Header from './Header/Header';
+import AssigneeList from './AssigneeList/AssigneeList';
 
 class Main extends Component {
   render() {
