@@ -8,7 +8,7 @@ class Main extends Component {
     return (
       <div className='Main'>
         <Header user={this.props.user}/>
-        <AssigneeList user={this.props.user}/>
+        <AssigneeList assignees={this.props.assignees} user={this.props.user}/>
       </div>
     );
   }

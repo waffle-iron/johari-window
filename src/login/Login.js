@@ -9,45 +9,17 @@ export class Login extends React.Component {
     auth: T.instanceOf(AuthService)
   }
 
-  constructor() {
-    super()
-    this.state = {
-      redirectRoot: this.findUser()
-    };
-  }
-
-  findUser() {
-    return !!localStorage.getItem('profile')
-  }
-
-
-  // loginAndRedirect = new Promise((resolve, reject) => {
-  //     this.props.auth.login(this)
-  //   })
-
-  loginAndRedirect() {
-    this.props.auth.login(this)
-    this.setState({ redirectRoot: true })
-  }
-
   render() {
-    if (this.state.redirectRoot) {
-      return (
-        <Redirect to='/' />
-      )
-    }
-
-    const LoginButton = withRouter(({ history }) => (
-      <button
-        onClick={() => {
-          this.loginAndRedirect()
-          }}>Login</button>
-    ))
+    // if (this.props.user.name) {
+    //   return (
+    //     <Redirect push to='/' />
+    //   )
+    // }
 
     return (
       <div className='Login'>
         <h2>Login</h2>
-        <LoginButton />
+        <button onClick={ this.props.auth.login.bind(this) } >Login</button>
       </div>
     )
   }

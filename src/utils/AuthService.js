@@ -1,29 +1,52 @@
 import Auth0Lock from 'auth0-lock'
 import { EventEmitter } from 'events'
+import { store } from '../index.js'
+import * as actions from '../actions'
+import { push } from 'react-router-redux'
 
 export default class AuthService extends EventEmitter {
   constructor(clientId, domain) {
     super()
     this.lock = new Auth0Lock(clientId, domain, {
       auth: {
-        redirectUrl: 'https://johariwindow.herokuapp.com/login',
+        redirectUrl: 'http://localhost:3000/login',
         responseType: 'token'
       }
     })
     this.lock.on('authenticated', this._doAuthentication.bind(this))
     this.login = this.login.bind(this)
+    this.profile = {}
   }
 
   _doAuthentication(authResult) {
     this.setToken(authResult.idToken)
-    this.lock.getProfile(authResult.idToken, (error, profile) => {
+    this.setProfile(authResult.idToken)
+  }
+
+  setProfile(token=this.getToken(), callback) {
+    if(!token) return
+    this.lock.getProfile(token, (error, profile) => {
       if (error) {
         console.log('Error loading the Profile', error)
       } else {
-        this.setProfile(profile)
+        const user_info = {
+          "user": {
+            "name": profile.name,
+            "github": profile.nickname,
+            "token": token
+          }
+        };
+        store.dispatch(actions.fetchUser(user_info))
+        store.dispatch(push('/'))
+
+          // .then((user) => {
+          //   fetch(`https://johariwindowapi.herokuapp.com/api/v1/users/${user.id}/assignments`)
+          //   .then(result => result.json())
+          //   .then(data => store.dispatch({ type: 'ADD_ASSIGNEES', assignees: data}))
+          // })
+          // .catch(error => console.log(error))
       }
     })
-
   }
 
   login() {
@@ -40,17 +63,6 @@ export default class AuthService extends EventEmitter {
 
   getToken() {
     return localStorage.getItem('id_token')
-  }
-
-  setProfile(profile) {
-    localStorage.setItem('profile', JSON.stringify(profile))
-    // Triggers profile_updated event to update the UI
-    this.emit('profile_updated', profile)
-  }
-
-  getProfile() {
-    const profile = localStorage.getItem('profile')
-    return profile ? JSON.parse(localStorage.profile) : {}
   }
 
   logout() {
