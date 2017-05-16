@@ -19,11 +19,10 @@ export const store = createStore(
   reducers, devTools,
   applyMiddleware(thunk, middleware)
 )
-
 render(
   <Provider store={store} >
     <ConnectedRouter history={history}>
-      <Route component={App}/>
+      <App/>
     </ConnectedRouter>
   </Provider>,
   document.getElementById('root')

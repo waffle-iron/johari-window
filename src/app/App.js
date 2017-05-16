@@ -28,7 +28,8 @@ class App extends Component {
 
       <div className='Router'>
         <Switch>
-          {/* <PrivateRoute auth={auth} exact path='/' component={Main} />
+          <Route exact path='/' component={Main} />
+          {/* <PrivateRoute auth={auth} exact path='/' component={Main} /> */}
           <Route
             path='/admin/cohort/:id'
             render={({match}) =>
@@ -42,7 +43,7 @@ class App extends Component {
             }
           />
           <PrivateRoute auth={auth} path='/mywindow' component={MyWindow} />
-          <PrivateRoute auth={auth} path='/admin' component={Admin} /> */}
+          <PrivateRoute auth={auth} path='/admin' component={Admin} />
           <Route path='/login' render={() => <Login auth={auth}/> } />
           <Route component={ NoMatch } />
         </Switch>

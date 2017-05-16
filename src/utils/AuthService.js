@@ -15,7 +15,6 @@ export default class AuthService extends EventEmitter {
     })
     this.lock.on('authenticated', this._doAuthentication.bind(this))
     this.login = this.login.bind(this)
-    this.profile = {}
   }
 
   _doAuthentication(authResult) {
