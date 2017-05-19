@@ -1,10 +1,10 @@
-import React from 'react';
-import { shallow, mount } from 'enzyme';
-import MyWindowAdjective from './MyWindowAdjective';
+import React from 'react'
+import { shallow, mount } from 'enzyme'
+import MyWindowAdjective from './MyWindowAdjective'
 
 describe('MyWindowAdjective', () => {
 
-  let wrapper;
+  let wrapper
 
   beforeEach(() => wrapper = shallow(<MyWindowAdjective />))
 

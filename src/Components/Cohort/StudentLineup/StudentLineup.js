@@ -1,14 +1,14 @@
-import React, { Component } from 'react';
-import './_student_lineup.sass';
-import Student from './Student/Student';
-import SubmitGroup from './SubmitGroup/SubmitGroup';
+import React, { Component } from 'react'
+import './_student_lineup.sass'
+import Student from './Student/Student'
+import SubmitGroup from './SubmitGroup/SubmitGroup'
 
 class StudentLineup extends Component {
   constructor(){
-    super();
-    this.eachStudent = this.eachStudent.bind(this);
-    this.toggleStudent = this.toggleStudent.bind(this);
-    this.submit = this.submit.bind(this);
+    super()
+    this.eachStudent = this.eachStudent.bind(this)
+    this.toggleStudent = this.toggleStudent.bind(this)
+    this.submit = this.submit.bind(this)
   }
 
   submit(){
@@ -16,7 +16,7 @@ class StudentLineup extends Component {
   }
 
   toggleStudent(student){
-    this.props.toggleStudent(student);
+    this.props.toggleStudent(student)
   }
 
   eachStudent(student, i){
@@ -32,8 +32,8 @@ class StudentLineup extends Component {
         </div>
         <SubmitGroup submit={this.submit} />
       </div>
-    );
+    )
   }
 }
 
-export default StudentLineup;
+export default StudentLineup

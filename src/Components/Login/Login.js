@@ -1,5 +1,5 @@
-import React, { PropTypes as T } from 'react';
-import AuthService from '../../Helpers/utils/AuthService';
+import React, { PropTypes as T } from 'react'
+import AuthService from '../../Helpers/utils/AuthService'
 import './Login.css'
 
 export class Login extends React.Component {
@@ -19,4 +19,4 @@ export class Login extends React.Component {
   }
 }
 
-export default Login;
+export default Login

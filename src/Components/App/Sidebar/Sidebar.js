@@ -1,6 +1,6 @@
-import React, { Component, PropTypes as T } from 'react';
-import { Link } from 'react-router-dom';
-import './_sidebar.sass';
+import React, { Component, PropTypes as T } from 'react'
+import { Link } from 'react-router-dom'
+import './_sidebar.sass'
 
 class Sidebar extends Component {
   static propTypes = {
@@ -22,8 +22,8 @@ class Sidebar extends Component {
           <p>logged in as: {this.props.user.name}</p>
         </div>
       </div>
-    );
+    )
   }
 }
 
-export default Sidebar;
+export default Sidebar

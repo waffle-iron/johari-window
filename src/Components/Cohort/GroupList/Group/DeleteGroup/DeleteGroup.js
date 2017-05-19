@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import './_delete_group.sass';
+import React, { Component } from 'react'
+import './_delete_group.sass'
 
 class DeleteGroup extends Component {
   constructor(){
@@ -8,14 +8,14 @@ class DeleteGroup extends Component {
   }
 
   delete(){
-    this.props.delete();
+    this.props.delete()
   }
   
   render() {
     return (
       <a onClick={this.delete} className='DeleteGroup'>Delete</a>
-    );
+    )
   }
 }
 
-export default DeleteGroup;
+export default DeleteGroup
