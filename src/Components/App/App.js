@@ -10,6 +10,8 @@ import NoMatch from '../NoMatch/NoMatch'
 import MyWindow from '../MyWindow/MyWindowContainer'
 import Admin from '../Admin/AdminContainer'
 import AuthService from '../../Helpers/utils/AuthService'
+import * as Actions from '../../Redux/actions/index'
+import { bindActionCreators } from 'redux'
 import "./_app.sass"
 
 const auth = new AuthService('Uj8xsUj6Hvdmep3V9d2TOQJFqgLOSIym', 'turingschool.auth0.com')
@@ -24,15 +26,23 @@ class App extends Component {
   }
 
   render() {
+    const { dispatch, user } = this.props
+    const setAssignee = bindActionCreators(Actions.setAssignee, dispatch)
+
     return (
     <div>
       <div className='App'>
-        <Sidebar user={this.props.user} />
+        <Sidebar user={user} />
       </div>
 
       <div className='Router'>
         <Switch>
-          <PrivateRoute auth={auth} exact path='/' component={Main} />
+          <PrivateRoute 
+            auth={auth} 
+            exact path='/' 
+            setAssignee={setAssignee}
+            component={Main} 
+          />
           <Route path='/admin/cohort/:id'
             render={({match}) => <Cohort cohortID={match.params.id} /> }
           />

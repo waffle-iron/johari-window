@@ -30,3 +30,10 @@ export const fetchUser = (user_info) => {
       .then(data => dispatch(addAssignees(data)))
   }
 }
+
+export const setAssignee = (id, name) => {
+  return {
+    type: types.SET_ASSIGNEE,
+    data: { id: id, name: name }
+  }
+}

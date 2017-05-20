@@ -5,12 +5,18 @@ import AssigneeList from './AssigneeList/AssigneeList';
 
 class Main extends Component {
   render() {
+    const { user, assignees, setAssignee } = this.props
+
     return (
       <div className='Main'>
-        <Header user={this.props.user} />
-        <AssigneeList assignees={this.props.assignees} user={this.props.user}/>
+        <Header user={user} />
+        <AssigneeList
+          assignees={assignees}
+          user={user}
+          setAssignee={setAssignee}
+        />
       </div>
-    );
+    )
   }
 }
 

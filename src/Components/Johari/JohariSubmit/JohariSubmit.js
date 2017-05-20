@@ -48,4 +48,4 @@ class JohariSubmit extends Component {
   }
 }
 
-export default JohariSubmit;
+export default JohariSubmit
