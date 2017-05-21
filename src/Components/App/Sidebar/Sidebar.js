@@ -8,6 +8,12 @@ class Sidebar extends Component {
   }
 
   render() {
+    const { user } = this.props
+    const logout = user.name && (
+      <a href="https://turingschool.auth0.com/v2/logout?returnTo=http%3A%2F%2Flocalhost:3000/">
+        logout
+      </a> 
+    )
     return (
       <div className='Sidebar'>
         <div className='sidebar-header'>
@@ -19,7 +25,8 @@ class Sidebar extends Component {
           <Link to='/admin'>Admin</Link>
         </div>
         <div className='sidebar-user-info'>
-          <p>logged in as: {this.props.user.name}</p>
+          <p>logged in as: {user.name}</p>
+          { logout || null }
         </div>
       </div>
     );
