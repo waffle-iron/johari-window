@@ -1,15 +1,15 @@
-import React, { Component } from 'react';
-import './_group.sass';
-import DeleteGroup from './DeleteGroup/DeleteGroup';
+import React, { Component } from 'react'
+import './_group.sass'
+import DeleteGroup from './DeleteGroup/DeleteGroup'
 
 class Group extends Component {
   constructor(){
-    super();
-    this.delete = this.delete.bind(this);
+    super()
+    this.delete = this.delete.bind(this)
   }
 
   delete(){
-    this.props.delete(this.props.students);
+    this.props.delete(this.props.students)
   }
 
   eachStudent(student, i){
@@ -22,8 +22,8 @@ class Group extends Component {
         { this.props.students.map(this.eachStudent) }
         <DeleteGroup delete={this.delete}/>
       </div>
-    );
+    )
   }
 }
 
-export default Group;
+export default Group

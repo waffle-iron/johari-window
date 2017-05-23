@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import './_no_match.sass';
+import React, { Component } from 'react'
+import './_no_match.sass'
 
 class NoMatch extends Component {
 
@@ -12,4 +12,4 @@ class NoMatch extends Component {
   }
 }
 
-export default NoMatch;
+export default NoMatch

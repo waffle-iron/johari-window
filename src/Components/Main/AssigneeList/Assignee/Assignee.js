@@ -1,10 +1,10 @@
-import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
-import './_assignee.sass';
+import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
+import './_assignee.sass'
 
 class Assignee extends Component {
   constructor() {
-    super();
+    super()
     this.completedAssignee = this.completedAssignee.bind(this)
     this.incompleteAssignee = this.incompleteAssignee.bind(this)
   }
@@ -31,4 +31,4 @@ class Assignee extends Component {
   }
 }
 
-export default Assignee;
+export default Assignee

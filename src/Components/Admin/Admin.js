@@ -1,19 +1,19 @@
-import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
-import './_admin.sass';
+import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
+import './_admin.sass'
 
 class Admin extends Component {
   constructor(){
-    super();
-    this.state = {cohorts: []};
+    super()
+    this.state = {cohorts: []}
   }
 
   componentDidMount(){
-    this.retrieveCohorts();
+    this.retrieveCohorts()
   }
 
   retrieveCohorts(){
-    var that = this;
+    var that = this
     fetch('https://johariwindowapi.herokuapp.com/api/v1/cohorts')
       .then(result => result.json())
       .then(data => {
@@ -33,8 +33,8 @@ class Admin extends Component {
           { this.state.cohorts.map(this.eachCohort) }
         </div>
       </div>
-    );
+    )
   }
 }
 
-export default Admin;
+export default Admin

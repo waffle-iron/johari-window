@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import './_my_window_adjective.sass';
+import React, { Component } from 'react'
+import './_my_window_adjective.sass'
 
 class MyWindowAdjective extends Component {
 
@@ -15,4 +15,4 @@ class MyWindowAdjective extends Component {
 
 }
 
-export default MyWindowAdjective;
+export default MyWindowAdjective

@@ -1,11 +1,11 @@
-import React from 'react';
-import { mount } from 'enzyme';
-import Assignee from './Assignee';
-import { BrowserRouter as Router } from 'react-router-dom';
+import React from 'react'
+import { mount } from 'enzyme'
+import Assignee from './Assignee'
+import { BrowserRouter as Router } from 'react-router-dom'
 
 describe('Assignee', () => {
 
-  let wrapper;
+  let wrapper
 
   beforeEach(() => {
     wrapper = mount(<Router><Assignee name='Stannis Baratheon' /></Router>)

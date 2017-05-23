@@ -1,17 +1,17 @@
-import React, { Component } from 'react';
-import './_cohort.sass';
-import StudentLineup from './StudentLineup/StudentLineup';
-import GroupList from './GroupList/GroupList';
+import React, { Component } from 'react'
+import './_cohort.sass'
+import StudentLineup from './StudentLineup/StudentLineup'
+import GroupList from './GroupList/GroupList'
 
 class Cohort extends Component {
   constructor(){
     super();
-    this.state = {checkedStudents: [], groups: [], students: []};
-    this.toggleStudent = this.toggleStudent.bind(this);
-    this.submit = this.submit.bind(this);
-    this.delete = this.delete.bind(this);
-    this.addToList = this.addToList.bind(this);
-    this.post = this.post.bind(this);
+    this.state = {checkedStudents: [], groups: [], students: []}
+    this.toggleStudent = this.toggleStudent.bind(this)
+    this.submit = this.submit.bind(this)
+    this.delete = this.delete.bind(this)
+    this.addToList = this.addToList.bind(this)
+    this.post = this.post.bind(this)
   }
 
   post(){
@@ -29,7 +29,7 @@ class Cohort extends Component {
 
   delete(group){
     var groups = this.state.groups
-    this.addToList(group);
+    this.addToList(group)
     let id = group[0].id
     for(var i = groups.length - 1; i > -1; i--){
       for(var j = groups[i].length - 1; j > -1; j--){
@@ -50,12 +50,11 @@ class Cohort extends Component {
   }
 
   componentDidMount(){
-    this.retrieveStudents();
+    this.retrieveStudents()
   }
 
   retrieveStudents(){
-    var that = this;
-    console.log(this.props.cohortID)
+    var that = this
     fetch(`https://johariwindowapi.herokuapp.com/api/v1/cohorts/${this.props.cohortID}/users`)
       .then(result => result.json())
       .then(data => {
@@ -65,12 +64,12 @@ class Cohort extends Component {
   }
 
   submit(){
-    var groups = this.state.groups;
+    var groups = this.state.groups
     let checkedStudents = this.state.checkedStudents
     if(checkedStudents.length > 0){
-      groups.push(checkedStudents);
-      this.removeStudentsFromList(checkedStudents);
-      this.setState({groups: groups, checkedStudents: []});
+      groups.push(checkedStudents)
+      this.removeStudentsFromList(checkedStudents)
+      this.setState({groups: groups, checkedStudents: []})
     }
 
   }
@@ -117,8 +116,8 @@ class Cohort extends Component {
         <StudentLineup cohortID={this.props.cohortID} toggleStudent={this.toggleStudent} submit={this.submit} students={this.state.students} />
         <GroupList groups={this.state.groups} delete={this.delete} post={this.post} />
       </div>
-    );
+    )
   }
 }
 
-export default Cohort;
+export default Cohort

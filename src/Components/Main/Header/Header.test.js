@@ -1,6 +1,6 @@
-import React from 'react';
-import { shallow } from 'enzyme';
-import Header from './Header';
+import React from 'react'
+import { shallow } from 'enzyme'
+import Header from './Header'
 
 describe('Header', () => {
   it('renders without crashing', () => {
@@ -14,6 +14,6 @@ describe('Header', () => {
     const auth = "auth"
 
     const wrapper = shallow(<Header user={user} auth={auth}/>)
-    expect(wrapper.find('.Header').length).toEqual(1);
+    expect(wrapper.find('.Header').length).toEqual(1)
   })
 })

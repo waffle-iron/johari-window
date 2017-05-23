@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
-import './_main.sass';
-import Header from './Header/Header';
-import AssigneeList from './AssigneeList/AssigneeList';
+import React, { Component } from 'react'
+import './_main.sass'
+import Header from './Header/Header'
+import AssigneeList from './AssigneeList/AssigneeList'
 
 class Main extends Component {
   render() {
@@ -10,8 +10,8 @@ class Main extends Component {
         <Header user={this.props.user} />
         <AssigneeList assignees={this.props.assignees} user={this.props.user}/>
       </div>
-    );
+    )
   }
 }
 
-export default Main;
+export default Main

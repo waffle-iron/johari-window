@@ -1,17 +1,17 @@
-import React, { Component } from 'react';
-import './_johari.sass';
-import AdjectiveList from './AdjectiveList/AdjectiveList';
-import JohariSubmit from './JohariSubmit/JohariSubmit';
-import { Link } from 'react-router-dom';
+import React, { Component } from 'react'
+import './_johari.sass'
+import AdjectiveList from './AdjectiveList/AdjectiveList'
+import JohariSubmit from './JohariSubmit/JohariSubmit'
+import { Link } from 'react-router-dom'
 
 class Johari extends Component {
 
   constructor(props) {
-    super(props);
+    super(props)
     this.state = { evaluateeName: '', adjectives: [] }
 
-    this.toggleAdjective = this.toggleAdjective.bind(this);
-    this.readyToSubmit = this.readyToSubmit.bind(this);
+    this.toggleAdjective = this.toggleAdjective.bind(this)
+    this.readyToSubmit = this.readyToSubmit.bind(this)
   }
 
   toggleAdjective(adjective) {
@@ -40,8 +40,8 @@ class Johari extends Component {
           <Link to='/' className='johari-cancel' >Cancel</Link>
         </div>
       </div>
-    );
+    )
   }
 }
 
-export default Johari;
+export default Johari

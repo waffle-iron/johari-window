@@ -1,11 +1,11 @@
-import React, { Component } from 'react';
-import './_adjective.sass';
+import React, { Component } from 'react'
+import './_adjective.sass'
 
 class Adjective extends Component {
   constructor() {
-    super();
+    super()
 
-    this.toggleAdjective = this.toggleAdjective.bind(this);
+    this.toggleAdjective = this.toggleAdjective.bind(this)
   }
 
   toggleAdjective() {
@@ -22,4 +22,4 @@ class Adjective extends Component {
   }
 }
 
-export default Adjective;
+export default Adjective

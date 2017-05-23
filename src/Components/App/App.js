@@ -12,7 +12,10 @@ import Admin from '../Admin/AdminContainer'
 import AuthService from '../../Helpers/utils/AuthService'
 import "./_app.sass"
 
-const auth = new AuthService('Uj8xsUj6Hvdmep3V9d2TOQJFqgLOSIym', 'turingschool.auth0.com')
+const auth = new AuthService(
+  'Uj8xsUj6Hvdmep3V9d2TOQJFqgLOSIym',
+  'turingschool.auth0.com'
+)
 
 
 class App extends Component {
