@@ -1,6 +1,6 @@
-import React from 'react';
-import { Route, Switch, Redirect } from 'react-router-dom';
-import './_shared.sass';
+import React from 'react'
+import { Route, Switch, Redirect } from 'react-router-dom'
+import './_shared.sass'
 
 export const PrivateRoute = ({ auth, component: Component, user, ...rest }) => (
   <Route
@@ -17,5 +17,5 @@ export const PrivateRoute = ({ auth, component: Component, user, ...rest }) => (
           )
     )}
   />
-);
+)
 

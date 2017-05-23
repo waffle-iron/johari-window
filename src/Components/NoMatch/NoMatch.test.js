@@ -1,10 +1,10 @@
-import React from 'react';
-import { shallow } from 'enzyme';
-import NoMatch from './NoMatch';
+import React from 'react'
+import { shallow } from 'enzyme'
+import NoMatch from './NoMatch'
 
 describe('NoMatch', () => {
 
-  let wrapper;
+  let wrapper
 
   beforeEach(() => wrapper = shallow(<NoMatch />))
 

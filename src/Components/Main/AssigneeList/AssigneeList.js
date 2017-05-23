@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
-import Assignee from './Assignee/Assignee';
-import './_assignee_list.sass';
+import React, { Component } from 'react'
+import Assignee from './Assignee/Assignee'
+import './_assignee_list.sass'
 
 class AssigneeList extends Component {
 
@@ -27,4 +27,4 @@ class AssigneeList extends Component {
   }
 }
 
-export default AssigneeList;
+export default AssigneeList

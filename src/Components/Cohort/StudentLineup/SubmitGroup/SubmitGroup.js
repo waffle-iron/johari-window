@@ -1,10 +1,10 @@
-import React, { Component } from 'react';
-import './_submit_group.sass';
+import React, { Component } from 'react'
+import './_submit_group.sass'
 
 class SubmitGroup extends Component {
   constructor(){
-    super();
-    this.submit = this.submit.bind(this);
+    super()
+    this.submit = this.submit.bind(this)
   }
   submit(){
     this.props.submit()
@@ -18,4 +18,4 @@ class SubmitGroup extends Component {
   }
 }
 
-export default SubmitGroup;
+export default SubmitGroup

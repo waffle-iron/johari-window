@@ -1,15 +1,15 @@
-import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
-import './_post_groups.sass';
+import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
+import './_post_groups.sass'
 
 class PostGroups extends Component {
   constructor(){
-    super();
+    super()
     this.post = this.post.bind(this)
   }
 
   post(){
-    this.props.post();
+    this.props.post()
   }
 
   render(){
@@ -21,4 +21,4 @@ class PostGroups extends Component {
   }
 }
 
-export default PostGroups;
+export default PostGroups

@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
-import './_main.sass';
-import Header from './Header/Header';
-import AssigneeList from './AssigneeList/AssigneeList';
+import React, { Component } from 'react'
+import './_main.sass'
+import Header from './Header/Header'
+import AssigneeList from './AssigneeList/AssigneeList'
 
 class Main extends Component {
   render() {
@@ -20,4 +20,4 @@ class Main extends Component {
   }
 }
 
-export default Main;
+export default Main

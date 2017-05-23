@@ -9,7 +9,7 @@ const Sidebar = ({ user }) => {
     : "please log in"
 
   const admin = user.role === "staff" && (<Link to='/admin'>Admin</Link>)
-     
+
   return (
     <div className='Sidebar'>
       <div className='sidebar-header'>

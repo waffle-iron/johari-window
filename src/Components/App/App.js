@@ -14,7 +14,10 @@ import * as Actions from '../../Redux/actions/index'
 import { bindActionCreators } from 'redux'
 import "./_app.sass"
 
-const auth = new AuthService('Uj8xsUj6Hvdmep3V9d2TOQJFqgLOSIym', 'turingschool.auth0.com')
+const auth = new AuthService(
+  'Uj8xsUj6Hvdmep3V9d2TOQJFqgLOSIym',
+  'turingschool.auth0.com'
+)
 
 
 class App extends Component {

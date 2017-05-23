@@ -1,17 +1,17 @@
-import React, { Component } from 'react';
-import './_my_window.sass';
-import MyWindowAdjective from './MyWindowAdjective/MyWindowAdjective';
+import React, { Component } from 'react'
+import './_my_window.sass'
+import MyWindowAdjective from './MyWindowAdjective/MyWindowAdjective'
 
 class MyWindow extends Component {
   constructor() {
-    super();
+    super()
     this.state = { myWindow: {
       arena: [],
       facade: [],
       blindSpot: [],
       unknown: []
     } }
-    this.getMyWindow = this.getMyWindow.bind(this);
+    this.getMyWindow = this.getMyWindow.bind(this)
   }
 
   componentDidMount() {
@@ -70,7 +70,7 @@ class MyWindow extends Component {
               </tr>
               <tr>
                 <td className="johari-windowpane-title">
-                <h4>Fa&#231;ade</h4>
+                <h4>Fa&#231ade</h4>
                 { facadeAdjectiveList }</td>
                 <td className="johari-windowpane-title">
                   <h4>Unknown</h4>
@@ -85,4 +85,4 @@ class MyWindow extends Component {
   }
 }
 
-export default MyWindow;
+export default MyWindow

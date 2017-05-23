@@ -1,14 +1,14 @@
-import React, { Component } from 'react';
-import Adjective from './Adjective/Adjective';
-import './_adjective_list.sass';
+import React, { Component } from 'react'
+import Adjective from './Adjective/Adjective'
+import './_adjective_list.sass'
 
 class AdjectiveList extends Component {
   constructor() {
-    super();
-    this.state = { adjectives: [] };
+    super()
+    this.state = { adjectives: [] }
 
-    this.toggleAdjective = this.toggleAdjective.bind(this);
-    this.eachAdjective = this.eachAdjective.bind(this);
+    this.toggleAdjective = this.toggleAdjective.bind(this)
+    this.eachAdjective = this.eachAdjective.bind(this)
   }
 
   componentDidMount() {
@@ -22,7 +22,7 @@ class AdjectiveList extends Component {
   }
 
   retrieveAdjectives() {
-    var that = this;
+    var that = this
     fetch('https://johariwindowapi.herokuapp.com/api/v1/adjectives')
         .then(result => result.json())
         .then(data => {
@@ -49,4 +49,4 @@ class AdjectiveList extends Component {
   }
 }
 
-export default AdjectiveList;
+export default AdjectiveList

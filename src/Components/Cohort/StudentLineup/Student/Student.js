@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import './_student.sass';
+import React, { Component } from 'react'
+import './_student.sass'
 
 class Student extends Component {
   constructor(props){
@@ -15,8 +15,8 @@ class Student extends Component {
         <input type="checkbox" className='checkbox' id={ this.props.name } onChange={this.toggleStudent} />
         <label htmlFor={ this.props.name }>{ this.props.name }</label>
       </div>
-    );
+    )
   }
 }
 
-export default Student;
+export default Student

@@ -1,10 +1,10 @@
-import React from 'react';
-import { shallow, mount } from 'enzyme';
-import MyWindow from './MyWindow';
+import React from 'react'
+import { shallow, mount } from 'enzyme'
+import MyWindow from './MyWindow'
 
 describe('MyWindow', () => {
 
-  let wrapper;
+  let wrapper
 
   beforeEach(() => wrapper = shallow(<MyWindow />))
 

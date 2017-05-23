@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
-import './_johari_submit.sass';
+import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
+import './_johari_submit.sass'
 
 class JohariSubmit extends Component {
   constructor(props) {
