@@ -29,9 +29,12 @@ class Johari extends Component {
   }
 
   render() {
+    const { assignee } = this.props
     return (
       <div className='Johari'>
-        <h3 className='johari-title'>Evaluate {this.props.user.name}</h3>
+        <h3 className='johari-title'>
+          Evaluate { assignee.name }
+        </h3>
         <p className='directions'>Select 15 that apply.</p>
         <AdjectiveList toggleAdjective={this.toggleAdjective}/>
         <div className='johari-buttons'>

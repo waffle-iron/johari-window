@@ -14,7 +14,18 @@ const user = (state={}, action) => {
 const assignees = (state=[], action) => {
   switch (action.type) {
     case types.ADD_ASSIGNEES:
-      return [ ...action.data ]
+      return [...action.data]
+
+    default:
+      return state
+  }
+}
+
+const assignee = (state={}, action) => {
+  switch (action.type) {
+    case types.SET_ASSIGNEE:
+      return { ...action.data }
+
     default:
       return state
   }
@@ -23,5 +34,6 @@ const assignees = (state=[], action) => {
 export default combineReducers({
     user,
     assignees,
+    assignee,
     router: routerReducer
   })

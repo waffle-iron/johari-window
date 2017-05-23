@@ -18,9 +18,16 @@ class Assignee extends Component {
   }
 
   incompleteAssignee() {
+    const { setAssignee, id, name } = this.props
+
     return (
-      <div className={'Assignee incomplete-assignee'}>
-        <Link to={'/johari/' + this.props.id}>{ this.props.name }</Link>
+      <div 
+        className='Assignee incomplete-assignee'
+        onClick={() => setAssignee(id, name)}
+      >
+        <Link to={`/johari/${id}`}>
+          { name }
+        </Link>
       </div>
     )
   }

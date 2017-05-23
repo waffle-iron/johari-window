@@ -1,29 +1,34 @@
-import React, { Component, PropTypes as T } from 'react'
+import React from 'react'
+import PropTypes from 'prop-types'
 import { Link } from 'react-router-dom'
 import './_sidebar.sass'
 
-class Sidebar extends Component {
-  static propTypes = {
-    location: T.object,
-  }
+const Sidebar = ({ user }) => {
+  const loggedInAs = user.name
+    ? `logged in as: ${user.name}`
+    : "please log in"
 
-  render() {
-    return (
-      <div className='Sidebar'>
-        <div className='sidebar-header'>
-          <h1>Johari Window</h1>
-        </div>
-        <div className='sidebar-links'>
-          <Link to='/'>Assignments</Link>
-          <Link to='/mywindow'>My Window</Link>
-          <Link to='/admin'>Admin</Link>
-        </div>
-        <div className='sidebar-user-info'>
-          <p>logged in as: {this.props.user.name}</p>
-        </div>
+  const admin = user.role === "staff" && (<Link to='/admin'>Admin</Link>)
+
+  return (
+    <div className='Sidebar'>
+      <div className='sidebar-header'>
+        <h1>Johari Window</h1>
       </div>
-    )
-  }
+      <div className='sidebar-links'>
+        <Link to='/'>Assignments</Link>
+        <Link to='/mywindow'>My Window</Link>
+        { admin || null }
+      </div>
+      <div className='sidebar-user-info'>
+        <p>{ loggedInAs }</p>
+      </div>
+    </div>
+  )
+}
+
+Sidebar.propTypes = {
+  user: PropTypes.object
 }
 
 export default Sidebar
